@@ -3,7 +3,7 @@
 ## Keys generation
 
 Because MTLS is bi-directional secured communication 
-we need to generate keypairs for client and server as well to encrypt data for each other
+we need to generate keypairs for client and server both as well to encrypt each other's data
 
 ### Server keypair, keystore, truststore generation
 
