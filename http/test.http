@@ -1,2 +1,0 @@
-GET https://localhost:8081/api/test
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTcwMTE4NjkwMSwiZXhwIjoxNzAxMjA0OTAxfQ.LFdGaNJThiFniTcvqQHt-desjpU2sWozcBS757Fw1VlHxXenXmb--W_eOBks8c_yzrKLA4hHxul8oOqSk0C2RQ
