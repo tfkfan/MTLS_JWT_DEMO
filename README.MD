@@ -1,6 +1,9 @@
 # Mutual TLS + JWT authentication spring boot example
 
-This project is designed to better understand how tls protocol and JWT token processing work
+Not for development/production use
+This project is designed to better understand how tls protocol 
+and JWT tokens processing work. JWT auth services, filters etc are already implemented in 
+spring-boot-starter-oauth2-resource-server
 
 ## Keys generation
 
