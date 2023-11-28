@@ -3,7 +3,7 @@
 Not for development/production use
 This project is designed to better understand how tls protocol 
 and JWT tokens processing work. JWT auth services, filters etc are already implemented in 
-spring-boot-starter-oauth2-resource-server
+spring-boot-starter-oauth2-resource-server and spring-boot-starter-oauth2-client
 
 ## Keys generation
 
