@@ -1,5 +1,7 @@
 # Mutable TLS + JWT authentication spring boot example
 
+This project is designed to better understand how tls protocol and JWT token processing work
+
 ## Keys generation
 
 Because MTLS is bi-directional secured communication 
