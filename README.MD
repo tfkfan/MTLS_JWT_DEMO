@@ -66,3 +66,15 @@ You should put this token as bearer header to other further requests
 Now you can run test method
 
     curl -v --cert client.cer --key client_private_key.pem --cacert server.cer --header "Content-Type: application/json" --header "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTcwMTE5MDI0OSwiZXhwIjoxNzAxMjA4MjQ5fQ.Nx-ZUTRaVMbonc_PrJro11Qi3Ab4PGmttbmfYA9baoQC67te07-j-iH7PjYbTV9JpaW2lw0C7_dI2PXBhoNvrA" --request  GET https://localhost:8081/api/test 
+
+## Security disable
+
+To disable JWT security authentication set parameter
+
+    security.enabled: false
+
+in your config/application.yml
+
+Try to make following request
+
+    curl -v --cert client.cer --key client_private_key.pem --cacert server.cer --header "Content-Type: application/json" --header --request  GET https://localhost:8081/api/test 

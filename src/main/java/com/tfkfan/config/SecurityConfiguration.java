@@ -6,6 +6,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -35,6 +36,8 @@ import java.io.IOException;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration {
+    @Value("${security.enabled:false}")
+    private Boolean securityEnabled;
     private final JwtTokenService jwtTokenService;
 
     public SecurityConfiguration(JwtTokenService jwtTokenService) {
@@ -51,9 +54,12 @@ public class SecurityConfiguration {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/**").authenticated()
-                        .anyRequest().permitAll())
+                .authorizeHttpRequests((requests) -> {
+                    if (securityEnabled)
+                        requests.requestMatchers("/api/**").authenticated();
+
+                    requests.anyRequest().permitAll();
+                })
                 .addFilterBefore(filter(), UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
